@@ -1,0 +1,170 @@
+{
+  "tablas": [
+    {
+      "nombre": "empleados",
+      "columnas": [
+        {
+          "nombre": "id_empleado",
+          "tipo": "serial",
+          "primaria": true
+        },
+        {
+          "nombre": "nombre",
+          "tipo": "text"
+        },
+        {
+          "nombre": "apellido_paterno",
+          "tipo": "text"
+        },
+        {
+          "nombre": "apellido_materno",
+          "tipo": "text"
+        },
+        {
+          "nombre": "fecha_nacimiento",
+          "tipo": "date"
+        },
+        {
+          "nombre": "CURP",
+          "tipo": "text"
+        },
+        {
+          "nombre": "RFC",
+          "tipo": "text"
+        },
+        {
+          "nombre": "INE",
+          "tipo": "text"
+        },
+        {
+          "nombre": "NSS",
+          "tipo": "text"
+        },
+        {
+          "nombre": "email",
+          "tipo": "text"
+        },
+        {
+          "nombre": "telefono",
+          "tipo": "text"
+        },
+        {
+          "nombre": "domicilio",
+          "tipo": "text"
+        },
+        {
+          "nombre": "id_departamento",
+          "tipo": "integer",
+          "foreing": {
+            "tabla": "departamentos",
+            "columna": "id_departamento"
+          }
+        },
+        {
+          "nombre": "id_puesto",
+          "tipo": "integer",
+          "foreing": {
+            "tabla": "puestos",
+            "columna": "id_puesto"
+          }
+        },
+        {
+          "nombre": "fecha_ingreso",
+          "tipo": "date"
+        },
+        {
+          "nombre": "salario_base",
+          "tipo": "numeric"
+        },
+        {
+          "nombre": "estatus",
+          "tipo": "boolean"
+        }
+      ]
+    },
+    {
+      "nombre": "departamentos",
+      "columnas": [
+        {
+          "nombre": "id_departamento",
+          "tipo": "serial",
+          "primaria": true
+        },
+        {
+          "nombre": "nombre",
+          "tipo": "text"
+        }
+      ]
+    },
+    {
+      "nombre": "puestos",
+      "columnas": [
+        {
+          "nombre": "id_puesto",
+          "tipo": "serial",
+          "primaria": true
+        },
+        {
+          "nombre": "nombre",
+          "tipo": "text"
+        }
+      ]
+    },
+    {
+      "nombre": "vacaciones",
+      "columnas": [
+        {
+          "nombre": "id_vacaciones",
+          "tipo": "serial",
+          "primaria": true
+        },
+        {
+          "nombre": "id_empleado",
+          "tipo": "integer",
+          "foreing": {
+            "tabla": "empleados",
+            "columna": "id_empleado"
+          }
+        },
+        {
+          "nombre": "fecha_inicio",
+          "tipo": "date"
+        },
+        {
+          "nombre": "fecha_fin",
+          "tipo": "date"
+        },
+        {
+          "nombre": "dias_tomados",
+          "tipo": "integer"
+        },
+        {
+          "nombre": "saldo_dias",
+          "tipo": "integer"
+        }
+      ]
+    },
+    {
+      "nombre": "incidencias",
+      "columnas": [
+        {
+          "nombre": "id_incidencia",
+          "tipo": "serial",
+          "primaria": true
+        },
+        {
+          "nombre": "id_empleado",
+          "tipo": "integer",
+          "foreing": {
+            "tabla": "empleados",
+            "columna": "id_empleado"
+          }
+        },
+        {
+          "nombre": "fecha",
+          "tipo": "date"
+        },
+        {
+          "nombre": "tipo_incidencia",
+          "tipo": "text"
+        },
